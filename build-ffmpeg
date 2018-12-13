@@ -322,9 +322,8 @@ fi
 if build "srt"; then
 	git clone --depth 1 https://github.com/Haivision/srt.git
 	cd $PACKAGES/srt || exit
-	mkdir build
-	cd build
-	cmake -DCMAKE_INSTALL_PREFIX="$HOME/ffmpeg_build" -DENABLE_C_DEPS=ON -DENABLE_SHARED=OFF -DENABLE_STATIC=ON ..
+	./configure
+	cmake -DCMAKE_INSTALL_LIBDIR="/usr/local/ffmpeg_sources/ffmpeg-build/workspace/lib" -DCMAKE_INSTALL_PREFIX="/usr/local/ffmpeg_sources/ffmpeg-build/workspace" -DENABLE_C_DEPS=ON -DENABLE_SHARED=OFF -DENABLE_STATIC=ON .
 	execute make -j $MJOBS
 	execute make install
 	build_done "srt"
