@@ -323,7 +323,7 @@ if build "srt"; then
 	git clone --depth 1 https://github.com/Haivision/srt.git
 	cd $PACKAGES/srt || exit
 	./configure
-	cmake -DCMAKE_INSTALL_LIBDIR="${WORKSPACE}/lib" -DCMAKE_INSTALL_PREFIX="${WORKSPACE}" -DENABLE_C_DEPS=ON -DENABLE_SHARED=OFF -DENABLE_STATIC=ON .
+	cmake -DCMAKE_INSTALL_LIBDIR="lib" -DCMAKE_INSTALL_PREFIX="${WORKSPACE}" -DENABLE_C_DEPS=ON -DENABLE_SHARED=OFF -DENABLE_STATIC=ON .
 	execute make -j $MJOBS
 	execute make install
 	build_done "srt"
