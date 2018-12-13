@@ -319,6 +319,16 @@ if build "fdk_aac"; then
 	build_done "fdk_aac"
 fi
 
+if build "srt"; then
+	git clone --depth 1 https://github.com/Haivision/srt.git
+	cd $PACKAGES/srt || exit
+	mkdir build
+	cd build
+	cmake -DCMAKE_INSTALL_PREFIX="$HOME/ffmpeg_build" -DENABLE_C_DEPS=ON -DENABLE_SHARED=OFF -DENABLE_STATIC=ON ..
+	execute make -j $MJOBS
+	execute make install
+	build_done "srt"
+fi
 
 build "ffmpeg"
 download "http://ffmpeg.org/releases/ffmpeg-4.1.tar.bz2" "ffmpeg-snapshot.tar.bz2"
