@@ -2,6 +2,8 @@
 
 # https://github.com/markus-perl/ffmpeg-build-script
 
+# yum groupinstall "Development Tools"
+
 VERSION=1.0
 CWD=$(pwd)
 PACKAGES="$CWD/packages"
