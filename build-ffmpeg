@@ -10,7 +10,7 @@
 # gcc --version
 
 VERSION=1.0
-CWD=$(pwd)
+CWD="/usr/local/ffmpeg_build"
 PACKAGES="$CWD/packages"
 WORKSPACE="$CWD/workspace"
 CC=clang
