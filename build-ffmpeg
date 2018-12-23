@@ -16,7 +16,7 @@ WORKSPACE="$CWD/workspace"
 CC=clang
 LDFLAGS="-L${WORKSPACE}/lib -lm"
 CFLAGS="-I${WORKSPACE}/include"
-PKG_CONFIG_PATH="${WORKSPACE}/lib/pkgconfig"
+export PKG_CONFIG_PATH="${WORKSPACE}/lib/pkgconfig"
 
 # Speed up the process
 # Env Var NUMJOBS overrides automatic detection
